@@ -1,10 +1,10 @@
-import NavBar from "./components/navBar";
-import SearchBar from "./components/searchBar";
-import JobType from "./components/jobType";
-import Postings from "./components/postings";
-import Department from "./components/department";
-import WorkSchedule from "./components/workSchedule";
-import Experience from "./components/experience";
+import NavBar from "../components/navBar";
+import SearchBar from "../components/searchBar";
+import JobType from "../components/jobType";
+import Postings from "../components/postings";
+import Department from "../components/department";
+import WorkSchedule from "../components/workSchedule";
+import Experience from "../components/experience";
 
 import useSWR from 'swr'
 import fetch from 'unfetch'
