@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 
 //import { useRouter } from 'next/router'
 
@@ -13,21 +14,30 @@ function sortByEducation() {}
 
 function sortByExperience() {}
 
-function revealJobs(va) {
-   if( document.getElementById(va).className == "hidden"){
-    document.getElementById(va).className = ""
-   
-   }else{
-    document.getElementById(va).className = "hidden"
-  
-   }
+function runRandom(){
+   // const [random, setRandom] = useState(0)
+     
 }
 
+function setRandom(ra){
+  //  setRandom(ra)
+}
+
+function revealJobs(va){
+    if(document.getElementById(va).className == "hidden"){
+        document.getElementById(va).className = "";
+    }else{
+        document.getElementById(va).className = "hidden";
+    }
+}
+    
 var random = "";
-
-
 const Postings = (props) => (
+
+    
+
   <div class=" ml-4 mr-4 mt-4 border-2 rounded-lg w-screen border-black-50 p-4 ">
+   
     <div class="flex flex-col">
       <div class="ml-0 flex flex-row justify-between ">
         <div > <span class="font-bold"> {props.TotalJobPostings} </span> job postings </div>
@@ -72,16 +82,19 @@ const Postings = (props) => (
       <div class="flex flex-col mt-4">
         {Array.from(props.PostingsData).map((posting) => {
           return (
-            <div class="mb-4 divide-y-2">
-                { random = posting.unique_id}
-              <button type="button" onClick={revealJobs()} >
+            <div id={posting.unique_id+"s"} class="mb-4 divide-y-2">
+               
+                
+              <button type="button"  onClick={()=>revealJobs(posting.unique_id)} >
                 <span class="mr-4 border-gray-500 border-2 p-1 rounded-md bg-gray-500 text-white ">
                   {" "}
                   {posting.badge}{" "}
                 </span>{" "}
                 {posting.number} jobs for {posting.name}
               </button>
-              <div id={random} class="hidden" >
+             
+              <div id={posting.unique_id} class="hidden" >
+                
 {Array.from(props.PostingsJobsData).map((postingjob) => {
  return(
     <div  class="mb-4 mt-4">
