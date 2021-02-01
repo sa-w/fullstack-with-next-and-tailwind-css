@@ -78,7 +78,7 @@ function getJobType () {
 
     if (error) return <div>failed to load</div>
     if (!data) return <div>loading...</div>
-   return  <Postings PostingsData={data.alljobs} PostingsJobsData={data.alljobitems} TotalJobPostings={data.totaljobpostings} /> 
+   return  <Postings PostingsData={data.alljobs} PostingsJobsData={data.alljobitems} TotalJobPostings={data.totaljobpostings} PostingsJobDetailsData={data.alljobpostingsdata} /> 
   }
 
 const Index = () => (
@@ -86,13 +86,15 @@ const Index = () => (
     <NavBar />
     <SearchBar />
     <div class=" container flex flex-row">
-      <div class=" w-auto flex flex-col">
+      <div class=" flex flex-col">
       {getJobType()}
       {getDepartment()}
      {getWorkSchedule()}
      {getExperience()}
       </div>{" "}
-      {getPostings()}
+     <div class="">
+        {getPostings()}
+        </div>
     </div>{" "}
   </div>
 );

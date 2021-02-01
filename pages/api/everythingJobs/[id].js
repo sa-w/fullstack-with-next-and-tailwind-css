@@ -21,6 +21,7 @@ export default async (req, res) => {
   var alljobitems = [];
   var temporaryName = "";
   var totaljobpostings = 0;
+  var alljobpostingsdata = [];
   if (req.query.id === "all") {
     for (var i of jobs) {
       temporaryName = i.name;
@@ -37,10 +38,18 @@ export default async (req, res) => {
               job_type: i.items[j].job_type,
               salary_range: "$"+i.items[j].salary_range[0] + "-" + "$"+i.items[j].salary_range[1] ,
               city: i.items[j].city,
+              department: i.items[j].department.toString(),
+            hours: i.items[j].hours.toString(),
+            description: i.items[j].description,
           });
+          alljobpostingsdata.push({
+            department: i.items[j].department.toString(),
+            hours: i.items[j].hours.toString(),
+            description: i.items[j].description,
+          })
       }
     }
-    res.json({ alljobs: alljobs, alljobitems: alljobitems, totaljobpostings: totaljobpostings });
+    res.json({ alljobs: alljobs, alljobitems: alljobitems, totaljobpostings: totaljobpostings, alljobpostingsdata: alljobpostingsdata });
   } else if (req.query.id === "department") {
   } else if (req.query.id === "workschedule") {
   } else if (req.query.id === "experience") {

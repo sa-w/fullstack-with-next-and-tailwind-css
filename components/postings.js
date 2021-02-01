@@ -9,7 +9,7 @@ function revealJobs(va) {
 }
 
 const Postings = (props) => (
-  <div class=" ml-4 mr-4 mt-4 border-2 rounded-lg border-black-50 p-4 ">
+  <div class="w-auto md:ml-4 mr-4 mt-4 border-2 rounded-lg border-black-50 p-4 ">
     <div class="flex flex-col">
       <div class="ml-0 flex flex-row justify-between ">
         <div>
@@ -76,11 +76,12 @@ const Postings = (props) => (
           {posting.number} jobs for {posting.name} */}
               </button>
 
-              <div id={posting.unique_id} class="hidden">
+              <div id={posting.unique_id} class="hidden divide-y-2">
                 {Array.from(props.PostingsJobsData).map((postingjob) => {
                   return (
-                    <div class="mb-4 mt-4">
-                      <p class="mt-2">
+                    <div class="mb-4 mt-4 divide-y-2 ">
+                     
+                      <p class="mt-2 divide-y-2">
                         <span class="mr-4 font-bold ">
                           {" "}
                           {postingjob.job_title}{" "}
@@ -89,6 +90,38 @@ const Postings = (props) => (
                         {postingjob.job_type} | {postingjob.salary_range} an
                         hour | {postingjob.city}
                       </p>
+                   
+                      
+
+                      <div class="mb-4 mt-4 flex flex-col">
+                        <div class="flex mt-4 flex-row justify-between">
+                          <div class="w-2/3">
+                            <div class="flex flex-row ">
+                              <div class="">Department:</div>
+                              <div>{postingjob.department}</div>
+                            </div>
+
+                            <div class="flex flex-row ">
+                              <div>Hours/shifts:</div>
+                              <div>{postingjob.hours}</div>
+                            </div>
+
+                            <div class="flex flex-row ">
+                              <div>Summary:</div>
+                              <div>{postingjob.description}</div>
+                            </div>
+                          </div>
+                          <div class="w-1/3 ">
+                           <div class="ml-10"> 
+                             <button class="bg-blue-700 text-white p-2 rounded-lg " type="button">Job details</button>
+                             </div>
+                            
+                           <div  class="ml-10">
+                              <button class=" border-4 mt-2 border-gray-500 p-2 rounded-lg" type="button">Save job</button>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
