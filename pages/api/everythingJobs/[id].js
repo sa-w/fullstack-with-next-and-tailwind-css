@@ -25,7 +25,7 @@ export default async (req, res) => {
     for (var i of jobs) {
       temporaryName = i.name;
       alljobs.push({
-        badge: temporaryName.slice(0, 2),
+        badge: temporaryName.slice(0, 2).toUpperCase(),
         number: i.total_jobs_in_hospital,
         name: i.name,
         unique_id: Math.random().toString(),

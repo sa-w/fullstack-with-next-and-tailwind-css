@@ -86,8 +86,8 @@ const Postings = (props) => (
                        
               <button type="button"  onClick={()=>revealJobs(posting.unique_id)} >
 
-<div class="flex flex-row" >
-  <div cols="2" class="mr-4 border-gray-500 border-2 p-1 rounded-md bg-gray-500 text-white " >
+<div class="flex flex-row justify-start" >
+  <div class="mr-4 border-gray-500 border-2 w-12 rounded-md bg-gray-500 text-white " >
   {posting.badge}
   </div>
   <div>
