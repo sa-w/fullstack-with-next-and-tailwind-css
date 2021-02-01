@@ -85,11 +85,21 @@ const Postings = (props) => (
             <div class="mb-4 divide-y-2">
                        
               <button type="button"  onClick={()=>revealJobs(posting.unique_id)} >
-                <span class="mr-4 border-gray-500 border-2 p-1 rounded-md bg-gray-500 text-white ">
+
+<div class="flex flex-row" >
+  <div cols="2" class="mr-4 border-gray-500 border-2 p-1 rounded-md bg-gray-500 text-white " >
+  {posting.badge}
+  </div>
+  <div>
+  {posting.number} jobs for {posting.name}
+  </div>
+</div>
+
+            {  /*  <span class="mr-4 border-gray-500 border-2 p-1 rounded-md bg-gray-500 text-white ">
                   {" "}
                   {posting.badge}{" "}
                 </span>{" "}
-                {posting.number} jobs for {posting.name}
+          {posting.number} jobs for {posting.name} */}
               </button>
              
               <div id={posting.unique_id} class="hidden" >
