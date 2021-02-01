@@ -4,7 +4,7 @@ const NavBar = () => (
       <div class=" mt-4 border-2 border-black-50 p-4 flex flex-row justify-between md:justify-between">
         <div class="text-blue-700" >HEALTH EXPLORE</div>
 
-        <div class="flex flex-row">
+        <div class="flex flex-row md:hidden">
           <div class="mr-4"> PROFILE </div>
           <div class="mr-4"> JOBS </div>
           <div class="mr-4"> PROFESSIONAL NETWORK </div>
@@ -13,7 +13,7 @@ const NavBar = () => (
         </div>
 
         <div class="flex flex-row">
-          <div class="mr-4">
+          <div class="mr-4 md:hidden">
             {" "}
             <button class="rounded border-blue-700 border-2 p-1 text-blue-700 " type="button">
               {" "}
@@ -24,7 +24,7 @@ const NavBar = () => (
             {" "}
             <label>JO</label>{" "}
           </div>
-          <div> LOGOUT </div>
+          <div class="md:hidden" > LOGOUT </div>
         </div>
       </div>
 
