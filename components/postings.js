@@ -42,7 +42,7 @@ const Postings = (props) => (
       <div class="ml-0 flex flex-row justify-between ">
         <div > <span class="font-bold"> {props.TotalJobPostings} </span> job postings </div>
 
-        <div class=" flex flex-row" >
+        <div class="hidden md:flex flex-row" >
           <div class="mr-2 font-thin " >
             Sort by
           </div>
@@ -79,12 +79,11 @@ const Postings = (props) => (
         </div>
       </div>
 
-      <div class="flex flex-col mt-4">
+      <div class="flex flex-col mt-4 overflow-hidden md:overflow-hidden ">
         {Array.from(props.PostingsData).map((posting) => {
           return (
-            <div id={posting.unique_id+"s"} class="mb-4 divide-y-2">
-               
-                
+            <div class="mb-4 divide-y-2">
+                       
               <button type="button"  onClick={()=>revealJobs(posting.unique_id)} >
                 <span class="mr-4 border-gray-500 border-2 p-1 rounded-md bg-gray-500 text-white ">
                   {" "}

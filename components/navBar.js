@@ -1,30 +1,34 @@
 const NavBar = () => (
   <div>
     <div class="container">
-      <div class=" mt-4 border-2 border-black-50 p-4 flex flex-row justify-between md:justify-between">
+      <div class=" mt-4 border-2 border-black-50 p-2 flex flex-row justify-between md:justify-between">
         <div class="text-blue-700" >HEALTH EXPLORE</div>
 
-        <div class="flex flex-row md:hidden">
-          <div class="mr-4"> PROFILE </div>
-          <div class="mr-4"> JOBS </div>
-          <div class="mr-4"> PROFESSIONAL NETWORK </div>
-          <div class="mr-4"> LOUNGE </div>
-          <div> SALARY </div>
+        <div class=" hidden md:flex flex-row">
+          <div class="mr-4 "> PROFILE </div>
+          <div class="mr-4 "> JOBS </div>
+          <div class="mr-4 "> PROFESSIONAL NETWORK </div>
+          <div class="mr-4 "> LOUNGE </div>
+          <div class="" > SALARY </div>
         </div>
 
         <div class="flex flex-row">
-          <div class="mr-4 md:hidden">
+          <div class="hidden md:inline-flex mr-4">
             {" "}
-            <button class="rounded border-blue-700 border-2 p-1 text-blue-700 " type="button">
+            <button class="rounded border-blue-700 border-2 text-blue-700 " type="button">
               {" "}
               CREATE JOB{" "}
             </button>{" "}
           </div>
-          <div class="mr-4 border-blue-700 border-2 p-1 rounded-full bg-blue-700 text-white ">
+          <div class="mr-4 border-blue-700 border-2 p-1 w-8 h-8 rounded-full bg-blue-700 text-white ">
             {" "}
-            <label>JO</label>{" "}
+            <div class="flex flex-row">
+<div class="object-center">JO</div>
+<div class="rounded-full border-white-700 bg-red-700 text-white  h-4 w-4 flex items-center justify-center object-right-top" >2</div>
+            </div>
+         
           </div>
-          <div class="md:hidden" > LOGOUT </div>
+          <div class="hidden md:inline-flex" > LOGOUT </div>
         </div>
       </div>
 
