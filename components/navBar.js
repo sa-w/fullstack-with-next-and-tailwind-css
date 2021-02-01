@@ -1,7 +1,7 @@
 const NavBar = () => (
   <div>
     <div class="container">
-      <div class=" mt-4 border-2 border-black-50 p-2 flex flex-row justify-between md:justify-between">
+      <div class="border-2 border-black-50 p-2 flex flex-row justify-between md:justify-between">
         <div class="text-blue-700" >HEALTH EXPLORE</div>
 
         <div class=" hidden md:flex flex-row">
