@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+//function for hiding and revealing jobs data
 function revealJobs(va) {
   if (document.getElementById(va).className == "hidden") {
     document.getElementById(va).className = "";
@@ -55,7 +56,7 @@ const Postings = (props) => (
       <div class="flex flex-col mt-4 overflow-hidden md:overflow-hidden ">
         {Array.from(props.PostingsData).map((posting) => {
           return (
-            <div class="mb-4 divide-y-2">
+            <div class="mb-4">
               <button
                 type="button"
                 onClick={() => revealJobs(posting.unique_id)}
@@ -69,19 +70,14 @@ const Postings = (props) => (
                   </div>
                 </div>
 
-                {/*  <span class="mr-4 border-gray-500 border-2 p-1 rounded-md bg-gray-500 text-white ">
-                  {" "}
-                  {posting.badge}{" "}
-                </span>{" "}
-          {posting.number} jobs for {posting.name} */}
               </button>
 
-              <div id={posting.unique_id} class="hidden divide-y-2">
+              <div id={posting.unique_id} class="hidden ">
                 {Array.from(props.PostingsJobsData).map((postingjob) => {
                   return (
-                    <div class="mb-4 mt-4 divide-y-2 ">
+                    <div class="mb-4 mt-4 ">
                      
-                      <p class="mt-2 divide-y-2">
+                      <p class="mt-2 ">
                         <span class="mr-4 font-bold ">
                           {" "}
                           {postingjob.job_title}{" "}
@@ -96,28 +92,30 @@ const Postings = (props) => (
                       <div class="mb-4 mt-4 flex flex-col">
                         <div class="flex mt-4 flex-row justify-between">
                           <div class="w-2/3">
-                            <div class="flex flex-row ">
-                              <div class="">Department:</div>
-                              <div>{postingjob.department}</div>
+                            <div class="flex flex-row">
+                              <div class="w-1/2">Department:</div>
+                              <div class="w-1/2">{postingjob.department}</div>
                             </div>
 
                             <div class="flex flex-row ">
-                              <div>Hours/shifts:</div>
-                              <div>{postingjob.hours}</div>
+                              <div class="w-1/2" >Hours/shifts:</div>
+                              <div class="w-1/2" >{postingjob.hours}</div>
                             </div>
 
                             <div class="flex flex-row ">
-                              <div>Summary:</div>
-                              <div>{postingjob.description}</div>
+                              <div class="w-1/2">Summary:</div>
+                              <div class="w-1/2" >{postingjob.description}</div>
                             </div>
                           </div>
                           <div class="w-1/3 ">
-                           <div class="ml-10"> 
+                            <div class="flex flex-col float-right ">
+                           <div class="w-24"> 
                              <button class="bg-blue-700 text-white p-2 rounded-lg " type="button">Job details</button>
                              </div>
                             
-                           <div  class="ml-10">
+                           <div  class="w-24">
                               <button class=" border-4 mt-2 border-gray-500 p-2 rounded-lg" type="button">Save job</button>
+                              </div>
                               </div>
                           </div>
                         </div>

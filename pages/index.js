@@ -10,7 +10,7 @@ import useSWR from 'swr'
 import fetch from 'unfetch'
 const fetcher = url => fetch(url).then(r => r.json())
 
-
+//Method for getting job types from api and passing the data to a component
 function getJobType () {
     const { data, error } = useSWR('/api/everythingFilters/jobtype', fetcher)
 
@@ -20,6 +20,7 @@ function getJobType () {
     // ...
   }
 
+  //Method for getting department from api and passing the data to a component
   function getDepartment () {
     const { data, error } = useSWR('/api/everythingFilters/department', fetcher)
 
@@ -29,6 +30,7 @@ function getJobType () {
     // ...
   }
 
+  //Method for getting work schedule from api and passing the data to a component
   function getWorkSchedule(){
     const { data, error } = useSWR('/api/everythingFilters/workschedule', fetcher)
 
@@ -37,6 +39,7 @@ function getJobType () {
    return  <WorkSchedule WorkScheduleData={data} /> 
   }
 
+  //Method for getting experience from api and passing the data to a component
   function getExperience(){
     const { data, error } = useSWR('/api/everythingFilters/experience', fetcher)
 
@@ -45,6 +48,7 @@ function getJobType () {
    return  <Experience ExperienceData={data} /> 
   }
 
+  //Method for getting postings from api and passing the data to a component
   function getPostings(){
     const { data, error } = useSWR('/api/everythingJobs/all', fetcher)
 
@@ -52,6 +56,7 @@ function getJobType () {
     if (!data) return <div>loading...</div>
    return  <Postings PostingsData={data.alljobs} PostingsJobsData={data.alljobitems} TotalJobPostings={data.totaljobpostings} PostingsJobDetailsData={data.alljobpostingsdata} /> 
   }
+
 
 const Index = () => (
   <div>

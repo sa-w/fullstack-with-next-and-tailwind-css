@@ -56,6 +56,5 @@ export default async (req, res) => {
   } else {
     res.statusCode = 400;
   }
-  //res.json({ jobs: jobs });
-  //}
+  
 };
