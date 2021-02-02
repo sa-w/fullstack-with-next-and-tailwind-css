@@ -11,34 +11,6 @@ import fetch from 'unfetch'
 const fetcher = url => fetch(url).then(r => r.json())
 
 
-/*
- function getAllJobs() {
-  
-  let part_total = 0;
- fetch("/api/everythingJobs/money")
-    .then((response) => response.json())
-    .then((data) => {
-     // var newdat = [];
-     // newdat=data;
-       console.log(data.jobs[0].name);
-      for (var i of data.jobs) {
-      // console.log("I am here ------- " + i.items[0].job_type);
-        for(var j=0;j<i.items.length;j++){
-          if(i.items[j].job_type === "Part-time"){
-part_total = part_total + 1;
-console.log("I hit " + i.items[j].job_type );
-          }else{
-          //  console.log("I missed " + i.items[j].job_type );
-          }
-        } 
-     }
-      console.log("Part time total is " + part_total);
-
-    });
- 
-} */
-
-
 function getJobType () {
     const { data, error } = useSWR('/api/everythingFilters/jobtype', fetcher)
 
@@ -86,13 +58,13 @@ const Index = () => (
     <NavBar />
     <SearchBar />
     <div class=" container flex flex-row">
-      <div class=" flex flex-col">
+      <div class="hidden md:inline-flex w-1/3 flex flex-col">
       {getJobType()}
       {getDepartment()}
      {getWorkSchedule()}
      {getExperience()}
       </div>{" "}
-     <div class="">
+     <div class="w-screen ml-4 md:w-2/3">
         {getPostings()}
         </div>
     </div>{" "}
