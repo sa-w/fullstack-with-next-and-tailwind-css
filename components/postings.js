@@ -9,8 +9,10 @@ function revealJobs(va) {
   }
 }
 
+
+
 const Postings = (props) => (
-  <div class="w-auto md:ml-4 mr-4 mt-4 border-2 rounded-lg border-black-50 p-4 ">
+  <div class="w-auto md:ml-0 mr-4 mt-4 border-2 rounded-lg border-black-50 p-4 ">
     <div class="flex flex-col">
       <div class="ml-0 flex flex-row justify-between ">
         <div>
