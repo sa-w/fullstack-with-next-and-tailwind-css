@@ -5,6 +5,7 @@ import Postings from "../components/postings";
 import Department from "../components/department";
 import WorkSchedule from "../components/workSchedule";
 import Experience from "../components/experience";
+import Footer from "../components/footer";
 
 import useSWR from "swr";
 import fetch from "unfetch";
@@ -80,6 +81,7 @@ const Index = () => (
       </div>{" "}
       <div class="w-screen ml-4 md:w-2/3">{getPostings()}</div>
     </div>{" "}
+    <Footer/>
   </div>
 );
 export default Index;
